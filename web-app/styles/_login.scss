@@ -1,0 +1,25 @@
+#login {
+  // background-color: #0061e8;
+  position: relative;
+  top: 100px;
+  align-items: center;
+  justify-content: center;
+
+  .login-box {
+    color: white;
+    background-color: #29c585;
+    margin: 0 auto;
+    max-width: 400px;
+    flex: 1;
+  }
+
+  .validation-error {
+    background: #cc141d;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
+
+
+

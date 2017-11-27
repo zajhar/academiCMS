@@ -1,0 +1,91 @@
+<h2 class="page-header">Administratorzy</h2>
+
+<div class="row" angular-busy="vm.promise">
+    <dash-tile title="'Dodaj administratora'" class="col-md-3">
+        <form name="addEditAdmin" ng-submit="addEditAdmin.$valid && vm.addUpdateAdmin()" novalidate>
+            <div class="form-group">
+                <label for="username">Login</label>
+                <input type="text" ng-model="vm.form.username" class="form-control" id="username"
+                       name="username" placeholder="Login" required>
+                <div class="validation-error"
+                     ng-show="addEditAdmin.$submitted && !addEditAdmin.username.$valid">
+                    <span ng-show="addEditAdmin.username.$error.required"
+                          ng-bind="'To pole jest wymagane!'"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" ng-model="vm.form.email" class="form-control" name="email"
+                       id="email"
+                       placeholder="email" required>
+                <div class="validation-error"
+                     ng-show="addEditAdmin.$submitted && !addEditAdmin.email.$valid">
+                    <span ng-show="addEditAdmin.email.$error.required"
+                          ng-bind="'To pole jest wymagane!'"></span>
+                    <span ng-show="addEditAdmin.email.$error.email"
+                          ng-bind="'Email musi być poprawny!'"></span>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Hasło</label>
+                <input type="password" ng-model="vm.form.password" class="form-control" name="password"
+                       id="password"
+                       placeholder="Hasło" ng-minlength="8">
+                <div class="validation-error"
+                     ng-show="addEditAdmin.$submitted && !addEditAdmin.password.$valid">
+                    <span ng-show="addEditAdmin.password.$error.required"
+                          ng-bind="'To pole jest wymagane!'"></span>
+                    <span ng-show="addEditAdmin.password.$error.minlength"
+                          ng-bind="'Hasło jest za krótkie!'"></span>
+                </div>
+            </div>
+
+            <div class="form-group validation-error"
+                 ng-show="vm.loginError">
+                <span ng-bind="vm.loginError"></span>
+            </div>
+
+            <div class="text-right">
+                <button type="reset" ng-disabled="!vm.form" ng-click="vm.clearForm(addEditAdmin)"
+                        class="btn btn-default">Anuluj
+                </button>
+                <button type="submit" class="btn btn-primary">Wyślij</button>
+            </div>
+        </form>
+    </dash-tile>
+    <dash-tile class="col-md-9" title="'Administratorzy'">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>login</th>
+                <th>email</th>
+                <th>ostatnio zalogowany</th>
+                <th style="width:50px;"></th>
+                <th style="width:50px;"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="admin in vm.admins">
+                <td ng-bind="admin.username"></td>
+                <td ng-bind="admin.email"></td>
+                <td ng-bind="admin.last_logged"></td>
+                <td>
+                    <div class="btn btn-primary" ng-click="vm.editAdminAccount($index)"><i class="fa fa-pencil"
+                                                                                           aria-hidden="true"></i></div>
+                </td>
+                <td>
+                    <div class="btn btn-danger" confirm-modal="vm.deleteAdmin(admin.id)"><i class="fa fa-times"
+                                                                                            aria-hidden="true"></i>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </dash-tile>
+</div>
+

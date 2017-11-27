@@ -1,0 +1,24 @@
+
+.nav {
+  > li {
+
+    > a {
+      &:hover {
+        background: none;
+        color: $brand-primary;
+      }
+    &:focus{
+      background: none;
+    }
+    }
+  }
+
+  .open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: white;
+      color: $brand-primary;
+    }
+  }
+}

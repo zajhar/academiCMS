@@ -1,0 +1,31 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <a ui-sref="landing.employeeList"> <img ng-src="/images/po-logo.png"></a>
+        </div>
+        <section id="search" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <h1>Znajdź Pracownika Politechniki!</h1>
+                <form ng-submit="vm.search()">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="vm.searchPhrase"
+                           placeholder="Imie, nazwisko, wydział">
+                  <span class="input-group-btn">
+                    <button type="submit" class="btn btn-default" type="button" >Szukaj</button>
+                  </span>
+                </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</header>
+
+<div class="container">
+    <div ui-view></div>
+</div>
+
+<footer class="footer navbar-static-bottom">
+    <div class="container text-right">
+        <a href="/admin">Admin Panel</a>
+    </div>
+</footer>

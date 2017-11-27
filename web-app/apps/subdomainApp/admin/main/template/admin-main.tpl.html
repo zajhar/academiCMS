@@ -1,0 +1,44 @@
+<div id="page-wrapper" class="">
+    <div class="collapse-button" ng-show="!vm.collapse">
+        <i ng-click="vm.collapseNow()" class="fa fa-bars cursor-pointer" aria-hidden="true"></i>
+    </div>
+
+    <aside id="subIndex-sidebar" ng-class="{active_sidebar:vm.collapse}">
+        <div class="collapse-button-close" ng-show="vm.collapse">
+            <i ng-click="vm.collapseNow()" class="fa fa-times cursor-pointer" aria-hidden="true"></i>
+        </div>
+        <div class="text-center margin-bottom-30">
+            <h4 class="margin-bottom-30">Panel Administracyjny</h4>
+            <div class="employee-avatar" style="background-image:url('{{vm.employee.avatarPath}}');"></div>
+            <h5 class="margin-top-15"
+                ng-bind="'Witaj '+vm.employee.academicTitle+' '+ vm.employee.firstName +' '+vm.employee.lastName"></h5>
+        </div>
+
+        <ul class="nav  nav-stacked">
+            <li><a ui-sref="admin.dashboard" ui-sref-active="active"><i class="fa fa-home margin-right-10"
+                                                                        aria-hidden="true"></i>
+                Dashboard</a></li>
+            <li><a ui-sref="admin.account" ui-sref-active="active"><i class="fa fa-wrench margin-right-10"
+                                                                      aria-hidden="true"></i>
+                Ustawienia Konta</a></li>
+            <li><a ui-sref-active="active" ui-sref="admin.news">
+                <i class="fa fa-newspaper-o margin-right-10" aria-hidden="true"></i>
+                Aktualności</a></li>
+            <li><a ui-sref-active="active" ui-sref="admin.subjects">
+                <i class="fa fa-sitemap margin-right-10" aria-hidden="true"></i>
+                Przedmioty</a></li>
+            <li><a ui-sref-active="active" ui-sref="admin.staticPage">
+                <i class="fa fa-file-text margin-right-10" aria-hidden="true"></i>
+                Strony statyczne</a></li>
+            <li><a href ng-click="vm.logout()">
+                <i class="fa fa-sign-out margin-right-10" aria-hidden="true"></i>
+                Wyloguj</a></li>
+
+        </ul>
+    </aside>
+
+    <section id="subIndex-content" ng-class="{active_content:vm.collapse}">
+        <div ui-view></div>
+    </section>
+
+</div>

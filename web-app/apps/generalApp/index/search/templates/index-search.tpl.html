@@ -1,0 +1,15 @@
+<section id="searchResult">
+    <h3>Wyniki wyszukiwania:</h3>
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-repeat="employee in vm.searchResult">
+                <employee-item employee="employee"></employee-item>
+            </div>
+        </div>
+        <div class="text-center">
+            <ul uib-pagination total-items="vm.results" items-per-page="vm.pageLimit" ng-model="vm.currentPage"
+                previous-text="Poprzednia" next-text="Następna" ng-change="vm.search(vm.currentPage)"
+                ng-show="vm.results > vm.pageLimit"></ul>
+        </div>
+    </div>
+</section>

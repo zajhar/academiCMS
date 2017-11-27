@@ -1,0 +1,9 @@
+{
+  "name": "academicms-subdomain",
+  "version": "0.0.1",
+  "private": true,
+  "main": "app",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

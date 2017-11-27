@@ -1,0 +1,19 @@
+<section id="teacherList">
+    <div class="row text-center">
+        <h3>Lista wszystkich pracowników:</h3>
+        <div class="btn-group text-center" ng-repeat="char in vm.chars">
+            <button class="btn btn-success no-radius" ng-bind="char" ng-click="vm.goToChar(char)"></button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div ng-repeat="char in vm.chars" id="{{char}}">
+                <h3 ng-bind="char" class="teacherList-char"></h3>
+                <div ng-repeat="employee in vm.groupedEmployees[char]">
+                    <employee-item employee="employee"></employee-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,61 @@
+<div id="page-wrapper" class="">
+    <div class="collapse-button" ng-show="!vm.collapse">
+        <i ng-click="vm.collapseNow()" class="fa fa-bars cursor-pointer" aria-hidden="true"></i>
+    </div>
+
+    <aside id="subIndex-sidebar" ng-class="{active_sidebar:vm.collapse}">
+        <div class="collapse-button-close" ng-show="vm.collapse">
+            <i ng-click="vm.collapseNow()" class="fa fa-times cursor-pointer" aria-hidden="true"></i>
+        </div>
+        <div class="text-center">
+            <div class="employee-avatar" style="background-image:url('{{vm.employee.avatarPath}}');"></div>
+            <h4 class="margin-top-15"
+                ng-bind="vm.employee.academicTitle+' '+ vm.employee.firstName +' '+vm.employee.lastName"></h4>
+
+            <p class="margin-bottom-0" ng-bind="vm.employee.function"></p>
+            <p class="margin-top-0" ng-bind="vm.employee.department.shortcut"></p>
+        </div>
+
+        <ul class="nav  nav-stacked">
+            <li><a class="active" href="#"><i class="fa fa-home margin-right-10" aria-hidden="true"></i>
+                Strona główna</a></li>
+            <li><a href="#"><i class="fa fa-newspaper-o  margin-right-10" aria-hidden="true"></i>
+                Newsy</a></li>
+            <li><a href="#"><i class="fa fa-book  margin-right-10" aria-hidden="true"></i>
+                Przedmioty</a></li>
+            <li><a href="#"><i class="fa fa-flask margin-right-10" aria-hidden="true"></i>
+                Publikacje</a></li>
+            <li><a href="#"><i class="fa fa-address-book-o  margin-right-10" aria-hidden="true"></i>
+                Konsultacje / Kontakt</a></li>
+        </ul>
+    </aside>
+
+    <section id="subIndex-content" ng-class="{active_content:vm.collapse}">
+        <h2 class="page-header">Witaj!</h2>
+        <div class="row">
+            <div class="col-sm-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum."
+            </div>
+            <div class="col-sm-4 text-right employee-info">
+                <h4 class="margin-top-0" ng-bind="vm.employee.function"></h4>
+                <p ng-bind="vm.employee.address"></p>
+                <p class="ma">Budynek: <span ng-bind="vm.employee.building"></span>, Pokój: <span
+                        ng-bind="vm.employee.room"></span></p>
+                <p class="ma">Telefon: <span ng-bind="vm.employee.phoneNumber"></span></p>
+                <p>Email: <span ng-bind="vm.employee.email"></span></p>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer footer-subIndex navbar-static-bottom">
+        <div class="container text-right">
+            <a href="/admin">Admin Panel</a>
+        </div>
+    </footer>
+
+</div>

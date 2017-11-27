@@ -1,0 +1,38 @@
+<div ng-click="vm.isCollapsed = !vm.isCollapsed" uib-collapse="!vm.isCollapsed">
+    <div class="display-flex cursor-pointer"
+         style="margin-top:15px;">
+        <img class="employee-item-img-big" ng-src="{{vm.employee.avatarPath}}">
+        </img>
+        <div class="employee-item-info">
+            <div class="col-sm-6">
+                <h3 class="margin-top-0"
+                    ng-bind="vm.employee.academicTitle +' '+ vm.employee.firstName +' '+ vm.employee.lastName"></h3>
+                <p class="margin-top-0 margin-bottom-0" ng-bind="vm.employee.function"></p>
+                <p class="margin-top-0" ng-bind="vm.employee.department.name"></p>
+                <p class="margin-top-0 margin-bottom-0">Telefon: <span ng-bind="vm.employee.phoneNumber"></span></p>
+                <p class="margin-top-0 margin-bottom-0">Adres: <span ng-bind="vm.employee.address"></span></p>
+                <p class="margin-top-0" ng-bind="'Budynek: '+vm.employee.building+', Pokój:'+vm.employee.room"></p>
+            </div>
+            <div class="col-sm-6 text-right">
+                <i class="fa fa-address-card-o" style="font-size:60px; color:#0957c3;" aria-hidden="true"></i>
+                <p  ng-bind="vm.employee.subdomain+'.po.opole.pl'"></p>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-click="vm.isCollapsed = !vm.isCollapsed" uib-collapse="vm.isCollapsed">
+    <div class="display-flex cursor-pointer"
+         style="margin-top:15px;">
+        <div class="employee-item-img" style="background-image: url('{{vm.employee.avatarPath}}')">
+        </div>
+        <div class="employee-item-info">
+            <p class="employee-item-title margin-bottom-0"
+               ng-bind="vm.employee.academicTitle +' '+ vm.employee.firstName +' '+ vm.employee.lastName"></p>
+            <p class="margin-top-0 margin-bottom-0" ng-bind="vm.employee.function"></p>
+            <p class="margin-top-0" ng-bind="vm.employee.department.name"></p>
+        </div>
+    </div>
+</div>

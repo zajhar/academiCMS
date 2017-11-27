@@ -1,0 +1,49 @@
+<section id="login" class=" max-height">
+    <div class="container max-height display-flex flexbox-center">
+        <div>
+            <img ng-src="images/academicms-logo.png">
+            <div class="well login-box ">
+
+                <form name="authenticationForm" ng-submit="authenticationForm.$valid && vm.logIn()" novalidate>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" ng-model="vm.loginData.email" class="form-control" id="email"
+                               name="email" placeholder="Email" autofocus required>
+                        <div class="validation-error"
+                             ng-show="authenticationForm.$submitted && !authenticationForm.email.$valid">
+                    <span ng-show="authenticationForm.email.$error.required"
+                          ng-bind="'To pole jest wymagane!'"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Hasło</label>
+                        <input type="password" ng-model="vm.loginData.password" class="form-control" name="password"
+                               id="password"
+                               placeholder="Hasło" required ng-minlength="8">
+                        <div class="validation-error"
+                             ng-show="authenticationForm.$submitted && !authenticationForm.password.$valid">
+                    <span ng-show="authenticationForm.password.$error.required"
+                          ng-bind="'To pole jest wymagane!'"></span>
+                    <span ng-show="authenticationForm.password.$error.minlength"
+                          ng-bind="'Hasło jest za krótkie!'"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group validation-error"
+                         ng-show="vm.loginError || vm.responseError">
+                        <span ng-bind="vm.loginError"></span>
+                        <span ng-bind="vm.responseError"></span>
+                    </div>
+
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">Wyślij</button>
+                    </div>
+                </form>
+            </div>
+            <span ng-bind="vm.test"></span>
+        </div>
+    </div>
+</section>
+
+

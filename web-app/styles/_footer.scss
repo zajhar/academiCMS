@@ -1,0 +1,17 @@
+footer {
+  position: absolute;
+  left: 0;
+  right:0;
+  bottom: 0;
+  height: 50px;
+  padding:20px 0;
+  color: white;
+
+  background-color: #0957c3;
+  a {
+    color: white;
+    &:hover {
+      color: inherit;
+    }
+  }
+}
